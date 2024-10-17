@@ -1,107 +1,117 @@
 // Responsive Navigation
 const body = document.querySelector("body"),
-	nav = document.querySelector("nav"),
-	sidebarOpen = document.querySelector(".sidebarOpen"),
-	siderbarClose = document.querySelector(".siderbarClose");
+    nav = document.querySelector("nav"),
+    sidebarOpen = document.querySelector(".sidebarOpen"),
+    siderbarClose = document.querySelector(".siderbarClose");
 
-	//   js code to toggle sidebar
-	sidebarOpen.addEventListener("click" , () =>{
-		nav.classList.add("active");
-	});
+//   js code to toggle sidebar
+sidebarOpen.addEventListener("click", () => {
+    nav.classList.add("active");
+});
 
-	body.addEventListener("click" , e =>{
-		let clickedElm = e.target;
+body.addEventListener("click", e => {
+    let clickedElm = e.target;
 
-		if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
-		    nav.classList.remove("active");
-		}
+    if (!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")) {
+        nav.classList.remove("active");
+    }
 });
 
 // Department Course Slider
 $('.courses-department').owlCarousel({
-    loop:true,
-    margin:12,
+    loop: false,
+    margin: 12,
     nav: false,
     dots: false,
-    autoplay:true,
+    autoplay: true,
     lazyLoad: true,
-    navText: ['<i class="fa-solid fa-arrow-left"></i>','<i class="fa-solid fa-arrow-right"></i>'],
+    navText: ['<i class="fa-solid fa-arrow-left"></i>', '<i class="fa-solid fa-arrow-right"></i>'],
     autoplayTimeout: 2000,
     autoplayHoverPause: true,
-    responsive:{
-        0:{
-            items:2,
+    responsive: {
+        0: {
+            items: 2,
             dots: true,
-            margin:12,
-            autoplay:true,
+            margin: 12,
+            autoplay: true,
             center: true,
-            nav:false
+            nav: false
         },
-        575:{
+        575: {
             items: 3
         },
-        768:{
-            items:4,
+        768: {
+            items: 4,
         },
-        992:{
-            items:6,
-            nav:true
+        992: {
+            items: 6,
+            nav: true
         }
+    },
+    onChanged: function(event) {
+        let activeIndex = event.item.index;
+        $('.owl-dot').removeClass('active');
+        $('.owl-dot').eq(activeIndex % 3).addClass('active');
     }
 });
 
 // Course Slider
 $('.course-carosel').owlCarousel({
-    margin:2,
+    margin: 2,
     dots: false,
     nav: true,
     loop: true,
-    navText: ['<i class="fa-solid fa-arrow-left"></i>','<i class="fa-solid fa-arrow-right"></i>'],
-    responsive:{
-        0:{
-            items:1,
+    navText: ['<i class="fa-solid fa-arrow-left"></i>', '<i class="fa-solid fa-arrow-right"></i>'],
+    responsive: {
+        0: {
+            items: 1,
             center: true,
-    		nav: true,
+            nav: true,
         },
-        575:{
+        575: {
             items: 3
         },
-        768:{
-            items:4,
+        768: {
+            items: 4,
         },
-        992:{
-            items:4,
+        992: {
+            items: 4,
         }
+    },
+    onChanged: function(event) {
+        let activeIndex = event.item.index;
+        $('.owl-dot').removeClass('active');
+        $('.owl-dot').eq(activeIndex % 3).addClass('active');
     }
 });
 
 // Mentor Slider
 $('.mentor-carosel').owlCarousel({
-    loop:true,
-    margin:12,
+    loop: true,
+    margin: 12,
     nav: false,
     dots: false,
-    autoplay:true,
+    autoplay: true,
     lazyLoad: true,
-    navText: ['<i class="fa-solid fa-arrow-left"></i>','<i class="fa-solid fa-arrow-right"></i>'],
+    navText: ['<i class="fa-solid fa-arrow-left"></i>', '<i class="fa-solid fa-arrow-right"></i>'],
     autoplayTimeout: 2000,
     autoplayHoverPause: true,
-    responsive:{
-        0:{
-            items:1,
+    responsive: {
+        0: {
+            items: 1,
             dots: true,
-            margin:12,
-            autoplay:true,
+            margin: 12,
+            autoplay: true,
             center: true,
         },
-        575:{
+        575: {
             items: 2,
         },
-        768:{
-            items:2
+        768: {
+            items: 2
         },
-        992:{
-            items:3,
+        992: {
+            items: 3,
             nav: true
         }
     }
@@ -109,73 +119,77 @@ $('.mentor-carosel').owlCarousel({
 
 // review Slider
 $('.review-carosel').owlCarousel({
-    loop:true,
-    margin:12,
+    loop: true,
+    margin: 12,
     nav: true,
-    dots: false,
-    autoplay:true,
+    dots: true,
+    autoplay: true,
     lazyLoad: true,
     center: true,
-    navText: ['<i class="fa-solid fa-arrow-left"></i>','<i class="fa-solid fa-arrow-right"></i>'],
+    navText: ['<i class="fa-solid fa-arrow-left"></i>', '<i class="fa-solid fa-arrow-right"></i>'],
     autoplayTimeout: 2000,
     autoplayHoverPause: true,
-    responsive:{
-        0:{
-            items:1,
+    responsive: {
+        0: {
+            items: 1,
             dots: true,
             margin: 12,
-            nav:false,
+            nav: false,
             center: true,
         },
-        575:{
+        575: {
             items: 1,
         },
-        768:{
-            items:2,
+        768: {
+            items: 2,
             nav: true
         },
-        992:{
-            items:3
+        992: {
+            items: 3
         }
+    },
+    onChanged: function(event) {
+        let activeIndex = event.item.index;
+        $('.owl-dot').removeClass('active');
+        $('.owl-dot').eq(activeIndex % 3).addClass('active');
     }
 });
 
 // Slick Slider Workshop image section
 $(".wokspece_img").slick({
-  autoplay:false,
-  slidesToShow:1,
-  slidesToScroll:1,
-  // fade:true,
-  arrows:false,
-  dots:false,
-  asNavFor:".wokspece_navs"
+    autoplay: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    // fade:true,
+    arrows: false,
+    dots: false,
+    asNavFor: ".wokspece_navs"
 })
 $(".wokspece_navs").slick({
-  autoplay:true,
-  autoplaySpeed: 1000,
-  slidesToShow:9,
-  slidesToScroll:1,
-  // fade:true,
-  focusOnSelect:true,
-  arrows:true,
-  dots:false,
-  asNavFor:".wokspece_img",
-  prevArrow:'<i class="fa fa-angle-left workspecePrevArrow"></i>',
-  nextArrow:'<i class="fa fa-angle-right workspeceNextArrow"></i>',
-  responsive: [
-    {
-      breakpoint: 992,
-      settings: {
-        slidesToShow: 5
-      }
-    },
-    {
-      breakpoint: 576,
-      settings: {
-        slidesToShow: 3
-      }
-    }
-  ]
+    autoplay: true,
+    autoplaySpeed: 1000,
+    slidesToShow: 9,
+    slidesToScroll: 1,
+    // fade:true,
+    focusOnSelect: true,
+    arrows: true,
+    dots: false,
+    asNavFor: ".wokspece_img",
+    prevArrow: '<i class="fa fa-angle-left workspecePrevArrow"></i>',
+    nextArrow: '<i class="fa fa-angle-right workspeceNextArrow"></i>',
+    responsive: [{
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 5
+            }
+        },
+        {
+            breakpoint: 576,
+            settings: {
+                slidesToShow: 3
+            }
+        }
+    ]
 })
 
 //video-popup
@@ -192,7 +206,7 @@ window.onscroll = () => {
         let offset = sec.offsetTop - 15;
         let height = sec.offsetHeight;
         let id = sec.getAttribute('id');
-        if(top >= offset && top < offset + height) {
+        if (top >= offset && top < offset + height) {
             navLinks.forEach(links => {
                 links.classList.remove('active');
                 document.querySelector('.course_detailes .navtabs a[href*=' + id + ']').classList.add('active');
@@ -203,163 +217,160 @@ window.onscroll = () => {
 
 // demo-carosel
 $('.demo-carosel').owlCarousel({
-    loop:true,
+    loop: true,
     items: 1,
-    margin:12,
+    margin: 12,
     nav: true,
     dots: false,
-    autoplay:true,
+    autoplay: true,
     lazyLoad: true,
     center: true,
-    navText: ['<i class="fa-solid fa-arrow-left"></i>','<i class="fa-solid fa-arrow-right"></i>'],
+    navText: ['<i class="fa-solid fa-arrow-left"></i>', '<i class="fa-solid fa-arrow-right"></i>'],
     autoplayTimeout: 2000,
     autoplayHoverPause: true,
 });
 // Slick Slider Course Section
 $(".CoursesUnderDepartment").slick({
-    centerMode:false,
-    centerPadding:"0",
+    centerMode: false,
+    centerPadding: "0",
     draggable: false,
     fade: true,
     cssEase: 'linear',
-    autoplay:false,
+    autoplay: false,
     focusOnSelect: false,
     slidesToShow: 1,
     slidesToScroll: 1,
-    dots:false,
-    arrows:false,
-    asNavFor:".courseDepartment"
-  })
-  $(".courseDepartment").slick({
-    autoplay:false,
+    dots: false,
+    arrows: false,
+    asNavFor: ".courseDepartment"
+})
+$(".courseDepartment").slick({
+    autoplay: false,
     focusOnSelect: true,
     slidesToShow: 3,
     slidesToScroll: 1,
-    dots:false,
-    arrows:true,
-    prevArrow:'<i class="fa fa-angle-left prevarrow"></i>',
-    nextArrow:'<i class="fa fa-angle-right nextarrow"></i>',
+    dots: false,
+    arrows: true,
+    prevArrow: '<i class="fa fa-angle-left prevarrow"></i>',
+    nextArrow: '<i class="fa fa-angle-right nextarrow"></i>',
 
-    asNavFor:".CoursesUnderDepartment",
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          arrows: true,
-          centerMode: true,
-          centerPadding: '40px',
-          slidesToShow: 3
+    asNavFor: ".CoursesUnderDepartment",
+    responsive: [{
+            breakpoint: 992,
+            settings: {
+                arrows: true,
+                centerMode: true,
+                centerPadding: '40px',
+                slidesToShow: 3
+            }
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                centerPadding: '50px',
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                arrows: true,
+                centerMode: false,
+            }
+        },
+        {
+            breakpoint: 576,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: true,
+                centerMode: false,
+            }
+        },
+        {
+            breakpoint: 414,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: true,
+                centerMode: false,
+            }
         }
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          centerPadding: '50px',
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          arrows: true,
-          centerMode: false,
-        }
-      },
-      {
-        breakpoint: 576,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: true,
-          centerMode: false,
-        }
-      },
-      {
-        breakpoint: 414,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: true,
-          centerMode: false,
-        }
-      }
     ]
-  });
-  $(".course_category_slider").slick({
+});
+$(".course_category_slider").slick({
     centerMode: false,
-    autoplay:true,
-    focusOnSelect:true,
+    autoplay: true,
+    focusOnSelect: true,
     slidesToShow: 3,
     slidesToScroll: 1,
-    dots:false,
-    arrows:false,
-    prevArrow:'<i class="fa fa-angle-left prevarrow"></i>',
-    nextArrow:'<i class="fa fa-angle-right nextarrow"></i>',
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          arrows: true,
-          slidesToShow: 3
-        }
-      },
-      {
-        breakpoint: 767,
-        settings: {
-          arrows: true,
-          dots:false,
-          slidesToShow: 2
-        }
-      },
+    dots: false,
+    arrows: false,
+    prevArrow: '<i class="fa fa-angle-left prevarrow"></i>',
+    nextArrow: '<i class="fa fa-angle-right nextarrow"></i>',
+    responsive: [{
+            breakpoint: 992,
+            settings: {
+                arrows: true,
+                slidesToShow: 3
+            }
+        },
+        {
+            breakpoint: 767,
+            settings: {
+                arrows: true,
+                dots: false,
+                slidesToShow: 2
+            }
+        },
 
-      {
-        breakpoint: 576,
-        settings: {
-          arrows: true,
-          dots:false,
-          slidesToShow: 1
-        }
-      },
+        {
+            breakpoint: 576,
+            settings: {
+                arrows: true,
+                dots: false,
+                slidesToShow: 1
+            }
+        },
     ]
-  });
-  
-  //bestSelling Start
-  $(".bestSelling").slick({
+});
+
+//bestSelling Start
+$(".bestSelling").slick({
     centerMode: false,
-    autoplay:true,
-    focusOnSelect:true,
+    autoplay: true,
+    focusOnSelect: true,
     slidesToShow: 3,
     slidesToScroll: 1,
-    dots:false,
-    arrows:false,
-    prevArrow:'<i class="fa fa-angle-left prevarrow"></i>',
-    nextArrow:'<i class="fa fa-angle-right nextarrow"></i>',
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          arrows: true,
-          slidesToShow: 3
-        }
-      },
-      {
-        breakpoint: 767,
-        settings: {
-          arrows: false,
-          dots:true,
-          slidesToShow: 2
-        }
-      },
+    dots: false,
+    arrows: false,
+    prevArrow: '<i class="fa fa-angle-left prevarrow"></i>',
+    nextArrow: '<i class="fa fa-angle-right nextarrow"></i>',
+    responsive: [{
+            breakpoint: 992,
+            settings: {
+                arrows: true,
+                slidesToShow: 3
+            }
+        },
+        {
+            breakpoint: 767,
+            settings: {
+                arrows: false,
+                dots: true,
+                slidesToShow: 2
+            }
+        },
 
-      {
-        breakpoint: 576,
-        settings: {
-          arrows: false,
-          dots:true,
-          slidesToShow: 1
-        }
-      },
+        {
+            breakpoint: 576,
+            settings: {
+                arrows: false,
+                dots: true,
+                slidesToShow: 1
+            }
+        },
     ]
-  });
+});
 
-  //Ajax democlass form submit; this part also added on demo Blade file
-  
+//Ajax democlass form submit; this part also added on demo Blade file
+
 //   $(function() {
 //     $.ajaxSetup({
 //         headers: {
@@ -421,27 +432,27 @@ $(function() {
         e.preventDefault();
 
         $.ajax({
-            url:$(this).attr('action'),
-            method:$(this).attr('method'),
-            data:new FormData(this),
-            processData:false,
-            dataType:'json',
-            contentType:false,
-            beforeSend:function(){
+            url: $(this).attr('action'),
+            method: $(this).attr('method'),
+            data: new FormData(this),
+            processData: false,
+            dataType: 'json',
+            contentType: false,
+            beforeSend: function() {
                 $(document).find('span.error-text').text('');
                 $('.loader').addClass('spinner-border');
                 $('.submit_btn_text').hide('spinner-border');
                 $('.submit_btn').attr('disabled', true);
             },
-            success:function(data){
-                if(data.status == 0){
-                    $.each(data.error, function(prefix, val){
-                        $('span.'+prefix+'_error').text(val[0]);
+            success: function(data) {
+                if (data.status == 0) {
+                    $.each(data.error, function(prefix, val) {
+                        $('span.' + prefix + '_error').text(val[0]);
                     });
                     $('.loader').removeClass('spinner-border');
                     $('.submit_btn_text').show('spinner-border');
                     $('.submit_btn').removeAttr('disabled');
-                }else{
+                } else {
                     $('#admissionForm')[0].reset();
                     Swal.fire({
                         icon: "success",
@@ -453,7 +464,7 @@ $(function() {
                     $('.loader').removeClass('spinner-border');
                     $('.submit_btn_text').show('spinner-border');
                     $('.submit_btn').removeAttr('disabled');
-                    
+
                     const dashboardUrl = "{{ route('admissionMsg') }}";
                     window.location.href = dashboardUrl;
                 }
@@ -465,8 +476,6 @@ $(function() {
 
 //pop up modal
 var myModal = new bootstrap.Modal(document.getElementById("popupadvirtise"));
-window.setTimeout(function(){
+window.setTimeout(function() {
     myModal.show()
 }, 4000);
-
-

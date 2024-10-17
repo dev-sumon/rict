@@ -8,6 +8,10 @@
     --light-blue: #E4EEF7;
     --light-orange: #FFF1E4;
 }
+body {
+    font-family: 'Raleway', sans-serif;
+}
+@import url('https://fonts.googleapis.com/css2?family=Siyam+Rupali&display=swap');
 @font-face {
     font-family: heading_bangla_font;
     src: url('../fonts/LiNiladriRongtuliUnicode-Regular.ttf') format('truetype');
@@ -16,7 +20,7 @@
     font-family: paragraph_bangla_font;
     src: url('../fonts/PotroSansBangla-Regular.ttf') format('truetype');
 }
-.font-heding{
+/* .font-heding{
     font-family: heading_bangla_font;
 }
 .font-paragraph{
@@ -25,9 +29,10 @@
 *{
 	font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
-}
+} */
 p{
     color: var(--dark);
+    font-family: 'Siyam Rupali', sans-serif;
 }
 .section-head h2{
     color: var(--blue);
@@ -217,7 +222,7 @@ nav .nav-bar .logo a{
     font-optical-sizing: auto;
 }
 .hero h1 span{
-    font-family: heading_bangla_font;
+    font-family: 'Siyam Rupali', sans-serif;
 }
 .hero .btns a{
     background: var(--blue);
@@ -864,6 +869,9 @@ nav .nav-bar .logo a{
     margin-bottom: 10px;
     break-inside: avoid;
 }
+.review .owl-theme .owl-dots .owl-dot {
+    display: none !important;
+}
 .faq {
     background: var(--white);
 }
@@ -1054,12 +1062,19 @@ footer .top-footer .browse_course:hover:after {
   background-color: var(--orange);
   transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }
+
 .owl-theme .owl-dots .owl-dot span {
     background: var(--blue) !important;
 }
 .owl-theme .owl-dots .owl-dot.active span {
     background: var(--orange) !important;
 }
+/* .owl-theme .owl-dots .owl-dot {
+    display: none;
+}
+.owl-theme .owl-dots .owl-dot:nth-child(-n+3) {
+    display: inline-block;
+} */
 .footer-mid {
   position: relative;
   z-index: 2;
@@ -1090,7 +1105,7 @@ footer .top-footer .browse_course:hover:after {
   display: block;
   font-size: 20px;
   font-weight: 700;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Raleway', sans-serif;
   margin-bottom: 10px;
 }
 .footer-social-icon a {
@@ -2031,9 +2046,10 @@ footer .contact i{
     .mentors .owl-carousel .owl-nav.disabled {
       display: none;
     }
-    .Course .owl-carousel .owl-nav.disabled {
+    /* .Course .owl-carousel .owl-nav.disabled {
       display: block;
-    }
+    } */
+    
     .Reviews .owl-prev {
       position: absolute;
       left: 18%;
@@ -2173,6 +2189,12 @@ footer .contact i{
     .hero h1{
         font-weight: 500;
     }
+    .owl-dots .owl-dot:nth-child(1),
+    .owl-dots .owl-dot:nth-child(2),
+    .owl-dots .owl-dot:nth-child(3) {
+        display: inline-block;
+    }
+    
 }
 @media screen and (max-width: 400px){
     .course_detailes .navtabs li a {
