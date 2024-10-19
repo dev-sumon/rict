@@ -31,7 +31,7 @@ $('.courses-department').owlCarousel({
     responsive: {
         0: {
             items: 2,
-            dots: true,
+            dots: false,
             margin: 12,
             autoplay: true,
             center: true,
@@ -91,7 +91,7 @@ $('.mentor-carosel').owlCarousel({
     margin: 12,
     nav: false,
     dots: false,
-    autoplay: true,
+    autoplay: false,
     lazyLoad: true,
     navText: ['<i class="fa-solid fa-arrow-left"></i>', '<i class="fa-solid fa-arrow-right"></i>'],
     autoplayTimeout: 2000,
@@ -99,7 +99,7 @@ $('.mentor-carosel').owlCarousel({
     responsive: {
         0: {
             items: 1,
-            dots: true,
+            dots: false,
             margin: 12,
             autoplay: true,
             center: true,
@@ -116,7 +116,30 @@ $('.mentor-carosel').owlCarousel({
         }
     }
 });
-
+$('.team-members').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:false,
+    dots: false,
+    autoplay: true,
+    autoplayTimeout: 2000,
+    lazyLoad: true,
+    responsive:{
+        0:{
+            items:1
+        },
+        575: {
+            items: 2,
+        },
+        768: {
+            items: 2
+        },
+        992: {
+            items: 3,
+            nav: true
+        }
+    }
+})
 // review Slider
 $('.review-carosel').owlCarousel({
     loop: true,
@@ -132,7 +155,7 @@ $('.review-carosel').owlCarousel({
     responsive: {
         0: {
             items: 1,
-            dots: true,
+            dots: false,
             margin: 12,
             nav: false,
             center: true,
@@ -353,7 +376,7 @@ $(".bestSelling").slick({
             breakpoint: 767,
             settings: {
                 arrows: false,
-                dots: true,
+                dots: false,
                 slidesToShow: 2
             }
         },
@@ -362,7 +385,7 @@ $(".bestSelling").slick({
             breakpoint: 576,
             settings: {
                 arrows: false,
-                dots: true,
+                dots: false,
                 slidesToShow: 1
             }
         },
