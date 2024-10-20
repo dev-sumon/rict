@@ -2288,6 +2288,16 @@ footer .contact i{
         align-items: center;
         text-align: center;
         margin: 0 auto;
+        /* padding: 0;
+        max-width: 100%; */
+    }
+    /* .desc {
+        padding: 0;
+        margin: 0; 
+        text-align: justify; 
+    } */
+    .job_placement .col-6 {
+        width: 100%;
     }
 }
 @media screen and (max-width: 575px){
