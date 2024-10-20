@@ -221,6 +221,7 @@ nav .nav-bar .logo a{
     font-weight: 600;
     color: var(--blue);
     font-optical-sizing: auto;
+    font-family: 'Siyam Rupali', sans-serif;
 }
 .hero h1 span{
     font-family: 'Siyam Rupali', sans-serif;
@@ -1175,6 +1176,7 @@ footer .top-footer .browse_course:hover:after {
   margin-bottom: 30px;
   text-transform: uppercase;
   position: relative;
+  text-align: justify !important;
 }
 .footer-widget-heading h3::before {
   content: "";
@@ -2001,9 +2003,9 @@ footer .contact i{
 .team-members .member {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Horizontally center the image and text */
-    justify-content: center; /* Vertically center the content */
-    text-align: center; /* Ensure text is centered */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .team_members .member .member_image {
@@ -2039,6 +2041,58 @@ footer .contact i{
 .owl-nav {
     display: none !important;
 }
+.differences .section-head span{
+    margin-bottom: 20px;
+}
+.job_placement .section-head span{
+    margin-bottom: 15px;
+}
+.job_placement .desc_video .image_about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; 
+}
+.job_placement .image_about .image .profile{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    border: 7px solid #fff;
+    box-shadow: 0 0 0 5px #2c347e;
+    object-fit: cover;
+    margin-top: 6px;
+}
+.job_placement .desc_video .image_about .name_designation .desc{
+    text-align: left;
+}
+.job_placement .desc_video .image_about .name_designation .name{
+    color: #e16127;
+    margin: 10px 0px;
+}
+.job_placement .desc_video .image_about .name_designation .designation{
+    color: #2c347e;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.desc_video .item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.desc_video .row {
+    width: 100%;
+}
+
+.image_about, .video_section {
+    flex: 1;
+    max-width: 100%;
+}
+
+
+
+
+
 
 @media (max-width: 991px) {
     nav .nav-bar .sidebarOpen{
@@ -2209,6 +2263,31 @@ footer .contact i{
     }
     .workshop .wokspece_img_item img{
         height: 250px;
+    }
+    .desc_video .row {
+        flex-direction: column;
+    }
+
+    .image_about, .video_section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .video_section iframe {
+        max-width: 550px;
+        height: auto;
+    }
+    .job_placement .desc_video .image_about .name_designation .desc{
+        display: none;
+    }
+    .name_designation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 0 auto;
     }
 }
 @media screen and (max-width: 575px){

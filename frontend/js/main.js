@@ -116,6 +116,7 @@ $('.mentor-carosel').owlCarousel({
         }
     }
 });
+// team member
 $('.team-members').owlCarousel({
     loop:true,
     margin:10,
@@ -136,6 +137,32 @@ $('.team-members').owlCarousel({
         },
         992: {
             items: 3,
+            nav: true
+        }
+    }
+})
+// desc_video
+$('.desc_video').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:false,
+    dots: false,
+    autoplay: true,
+    autoplayTimeout: 4000,
+    lazyLoad: true,
+    items: 1,
+    responsive:{
+        0:{
+            items:1
+        },
+        575: {
+            items: 1,
+        },
+        768: {
+            items: 1
+        },
+        992: {
+            items: 1,
             nav: true
         }
     }
