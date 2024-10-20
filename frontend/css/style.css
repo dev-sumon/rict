@@ -2325,6 +2325,9 @@ footer .contact i{
     .Reviews .reviewSuccess{
         columns: 1;
     }
+    .Reviews .section-head{
+        padding-top: 3rem;
+    }
     .content #Course_Details .card ul.learning{
         display: grid;
         grid-template-columns: repeat(2,1fr);
