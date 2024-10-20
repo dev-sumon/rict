@@ -2279,9 +2279,9 @@ footer .contact i{
         max-width: 550px;
         height: auto;
     }
-    .job_placement .desc_video .image_about .name_designation .desc{
+    /* .job_placement .desc_video .image_about .name_designation .desc{
         display: none;
-    }
+    } */
     .name_designation {
         display: flex;
         flex-direction: column;

@@ -146,9 +146,8 @@ $('.desc_video').owlCarousel({
     loop:true,
     margin:10,
     nav:false,
-    dots: false,
-    autoplay: true,
-    autoplayTimeout: 4000,
+    dots: true,
+    autoplay: false,
     lazyLoad: true,
     items: 1,
     responsive:{
